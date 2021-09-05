@@ -1,0 +1,82 @@
+DELETE /device-index
+
+DELETE /device
+
+DELETE /_template/device-data
+
+
+PUT _template/device-data
+{
+  "index_patterns": ["device-index"],
+
+  "mappings": {
+    "properties": {
+
+      "haLatitude": {
+        "type": "double"
+      },
+      "haLocation": {
+        "type": "geo_point"
+      },
+      "haLongitude": {
+        "type": "double"
+      },
+      "latitude": {
+        "type": "double"
+      },
+      "location": {
+        "type": "geo_point"
+      },
+      "longitude": {
+        "type": "double"
+      },
+      "msisdn": {
+        "type": "keyword"
+      },
+      "no": {
+        "type": "integer"
+      },
+      "@timestamp": {
+        "type": "date",
+        "format": ["yyyy-MM-dd HH:mm:ss.SSSXXX"]
+      },
+
+      "contact-id": {
+        "type": "integer"
+      },
+
+      "sms-id": {
+        "type": "integer"
+      },
+
+      "incomingCall-id": {
+        "type": "integer"
+      },
+
+      "outgoingCall-id": {
+        "type": "integer"
+      },
+
+      "missedCall-id": {
+        "type": "integer"
+      },
+
+       "image-id": {
+        "type": "integer"
+      },
+       "document-size": {
+        "type": "integer"
+      },
+       "usingclient": {
+        "type": "integer"
+      },
+      "dbId": {
+        "type": "integer"
+      },
+      "dbSize": {
+        "type": "integer"
+      }
+    }
+  }
+  , "aliases": { }
+}
