@@ -32,7 +32,7 @@ public class DeviceController {
         return "request received";
     }
 
-        @Scheduled(fixedDelay = 10000)
+    @Scheduled(fixedDelay = 20000)
     public void generateTask() {
         log.info("executing task...");
         if(this.isStart) {
